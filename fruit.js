@@ -6,31 +6,20 @@ class Fruit extends Cell {
             return this[Math.floor(Math.random() * this.length)];
         }
 
-        super(Fruit.randomCoordinate, Fruit.randomCoordinate);
-
-    }
-
-    static get randomCoordinate() {
-
-        let grades = [];
-
-        for (let i = 0; i < canvas.height; i += cellSideLength) {
-            grades.push(i);
-        }
-
-        return grades.randomChoice();
+        super(Cell.randomCoordinate(canvas.width, cellWidth),
+        Cell.randomCoordinate(canvas.height, cellHeight));
 
     }
 
     randomizeCoordinates() {
-        this.x = Fruit.randomCoordinate;
-        this.y = Fruit.randomCoordinate;
+        this.x = Cell.randomCoordinate(canvas.width, cellWidth);
+        this.y = Cell.randomCoordinate(canvas.height, cellHeight);
     }
 
     spawn() {
 
         ctx.fillStyle = 'red';
-        ctx.fillRect(this.x, this.y, cellSideLength, cellSideLength);
+        ctx.fillRect(this.x, this.y, cellWidth, cellHeight);
 
     }
 

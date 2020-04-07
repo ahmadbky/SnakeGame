@@ -7,4 +7,16 @@ class Cell {
 
     }
 
+    static randomCoordinate(side, cellSide) {
+
+        let grades = [];
+
+        for (let i = 0; i < side; i += cellSide) {
+            grades.push(i);
+        }
+
+        return grades.randomChoice();
+
+    }
+
 }

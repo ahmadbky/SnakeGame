@@ -7,7 +7,7 @@ class Game {
 
         this.update();
 
-        this.availableCells = (canvas.height / cellSideLength) * (canvas.width / cellSideLength);
+        this.availableCells = (canvas.height / cellHeight) * (canvas.width / cellWidth);
 
     }
 

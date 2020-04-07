@@ -59,31 +59,31 @@ class Snake {
     draw() {
 
         ctx.fillStyle = 'yellow';
-        ctx.fillRect(this.x, this.y, cellSideLength, cellSideLength);
+        ctx.fillRect(this.x, this.y, cellWidth, cellHeight);
 
         for (const cell of this.tail) {
-            ctx.fillRect(cell.x, cell.y, cellSideLength, cellSideLength);
+            ctx.fillRect(cell.x, cell.y, cellWidth, cellHeight);
         }
 
     }
 
     moveUp() {
         this.vectorX = 0;
-        this.vectorY = -cellSideLength;
+        this.vectorY = -cellHeight;
     }
 
     moveDown() {
         this.vectorX = 0;
-        this.vectorY = cellSideLength;
+        this.vectorY = cellHeight;
     }
 
     moveRight() {
-        this.vectorX = cellSideLength;
+        this.vectorX = cellWidth;
         this.vectorY = 0;
     }
 
     moveLeft() {
-        this.vectorX = -cellSideLength;
+        this.vectorX = -cellWidth;
         this.vectorY = 0;
     }
 

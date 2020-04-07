@@ -4,4 +4,5 @@ const ctx = canvas.getContext('2d');
 const scale = 20;
 const framerate = 10;
 
-const cellSideLength = canvas.height / scale;
+const cellHeight = canvas.height / scale;
+const cellWidth = canvas.width / scale;
