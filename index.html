@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake Game</title>
+</head>
+<body onload="run();">
+    
+    <canvas id="game" height="500" width="500"></canvas>
+
+    <script src="app.js"></script>
+    <script src="cell.js"></script>
+    <script src="snake.js"></script>
+    <script src="fruit.js"></script>
+    <script src="game.js"></script>
+    <script>
+
+        function run() {
+
+            const refreshTime = (1 / framerate) * 1000;
+            const game = new Game();
+            
+            setInterval(() => {
+                
+                game.update();
+
+            }, refreshTime);
+
+        }
+
+    </script>
+
+</body>
+</html>
