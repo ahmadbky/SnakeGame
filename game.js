@@ -7,6 +7,8 @@ class Game {
 
         this.update();
 
+        this.availableCells = (canvas.height / cellSideLength) * (canvas.width / cellSideLength);
+
     }
 
     update() {
@@ -24,11 +26,32 @@ class Game {
 
     }
 
+    checkWin() {
+        return this.availableCells == 0;
+    }
+
+    checkLoose() {
+
+        for (let i = 0; i < this.snake.tail.length - 1; i++) {
+
+            const cell = this.snake.tail[i];
+            if (this.snake.x == cell.x && this.snake.y == cell.y) {
+                return true;
+            }
+
+        }
+
+        return false;
+    }
+
     checkEating() {
 
         if (this.snake.x == this.fruit.x && this.snake.y == this.fruit.y) {
+
             this.fruit.randomizeCoordinates();
             this.snake.growUp(this.snake.x, this.snake.y);
+            this.availableCells -= 1;
+
         }
 
     }

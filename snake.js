@@ -37,16 +37,9 @@ class Snake {
 
     }
 
-    checkCollisions() {
-
-        // todo
-
-    }
-
     update() {
 
         this.checkBorders();
-        this.checkCollisions();
 
         for (let i = this.tail.length-1; i > 0; i--) {
             this.tail[i].x = this.tail[i-1].x;

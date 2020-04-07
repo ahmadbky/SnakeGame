@@ -19,10 +19,15 @@
 
             const refreshTime = (1 / framerate) * 1000;
             const game = new Game();
-            
-            setInterval(() => {
-                
+
+            const mainLoop = setInterval(() => {
+
                 game.update();
+
+                if (game.checkWin() || game.checkLoose()) {
+                    clearInterval(mainLoop);
+                    run();
+                }
 
             }, refreshTime);
 
