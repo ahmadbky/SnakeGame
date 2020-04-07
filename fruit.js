@@ -7,7 +7,7 @@ class Fruit extends Cell {
         }
 
         super(Cell.randomCoordinate(canvas.width, cellWidth),
-        Cell.randomCoordinate(canvas.height, cellHeight));
+            Cell.randomCoordinate(canvas.height, cellHeight));
 
     }
 
