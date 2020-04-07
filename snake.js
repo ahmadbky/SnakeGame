@@ -23,7 +23,7 @@ class Snake {
 
         } else if (this.x >= canvas.width) {
 
-            this.x = -cellSideLength;
+            this.x = 0;
 
         } else if (this.y < 0) {
 
@@ -31,15 +31,13 @@ class Snake {
 
         } else if (this.y >= canvas.height) {
 
-            this.y = -cellSideLength;
+            this.y = 0;
 
         }
 
     }
 
     update() {
-
-        this.checkBorders();
 
         for (let i = this.tail.length-1; i > 0; i--) {
             this.tail[i].x = this.tail[i-1].x;
@@ -53,6 +51,8 @@ class Snake {
 
         this.x += this.vectorX;
         this.y += this.vectorY;
+
+        this.checkBorders();
 
     }
 
